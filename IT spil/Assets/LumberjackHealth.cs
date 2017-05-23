@@ -15,4 +15,14 @@ public class LumberjackHealth : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void TakeDamage(int damage)
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
